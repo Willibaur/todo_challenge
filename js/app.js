@@ -1,1 +1,1 @@
-var toDo = angular.module('ToDoList', ['ngResource']);
+var toDoList = angular.module('ToDoList', ['ngResource']);

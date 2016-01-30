@@ -1,10 +1,6 @@
-toDo.controller('ToDoListController', [function() {
-  var self = this;
+toDoList.controller('ToDoListController', [function() {
 
-  self.addTask = function () {
-  }
+  var self      = this;
+  self.taskList = [];
 
-  self.returnList = {
-    "items": ["ToDo-weekend-challenge"]
-  };
 }]);

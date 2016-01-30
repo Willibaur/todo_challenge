@@ -7,16 +7,8 @@ describe('ToDoListController', function() {
     ctrl = $controller('ToDoListController');
   }));
 
-  it('initialise with an empty task', function () {
-    expect(ctrl.addTask).toBeUndefined();
-    expect(ctrl.returnList).toBeUndefined();
+  it('initialise with an empty list task', function () {
+    expect(ctrl.taskList.length).toEqual(0);
   });
 
-  describe('when adding a task', function () {
-    var items = ["ToDo-weekend-challenge"];
-
-    xit('displays task', function () {
-      expect(ctrl.returnList.items).toEqual(items);
-    });
-  });
 });
