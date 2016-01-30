@@ -89,7 +89,7 @@
     "yui"           : false,    // Yahoo User Interface
 
     // Custom Globals
-    "globals"       : { "toDo": true, "angular": true,
+    "globals"       : { "toDoController": true, "toDo": true, "angular": true,
                         "angular": false, "describe": false, "it": false,
                         "expect": false, "beforeEach": false,
                         "afterEach": false, "module": false,
