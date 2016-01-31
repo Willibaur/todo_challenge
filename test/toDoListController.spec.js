@@ -18,4 +18,13 @@ describe('ToDoListController', function() {
       expect(ctrl.taskList[0].title).toEqual('Coding');
     });
   });
+
+  describe('#removeTask', function () {
+    it('removes a selected task', function () {
+      ctrl.addTask('Coding');
+      ctrl.taskList[0].done = true;
+      ctrl.removeTask();
+      expect(ctrl.taskList.length).toEqual(0);
+    });
+  });
 });

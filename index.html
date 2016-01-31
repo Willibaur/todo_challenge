@@ -21,6 +21,7 @@
       <form class="form-horizontal">
         <input type="text" ng-model="toDoCtrl.newTask">
         <button class="btn btn-success" ng-click="toDoCtrl.addTask(toDoCtrl.newTask)">Add task</button>
+        <button class="btn" ng-click="toDoCtrl.removeTask()">Remove task</button>
       </form>
 
       <ul class="list-group" ng-repeat="taskList in toDoCtrl.taskList">
