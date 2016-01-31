@@ -1,12 +1,12 @@
 describe('ToDo List', function () {
+  var addingTask = require("./helpers/addingTaskHelper");
+
   beforeEach(function() {
     browser.get('http://localhost:8080');
   });
 
 
   describe('Removes a task for', function () {
-    var addingTask = require("./helpers/addingTaskHelper");
-
     it('a single task', function () {
       addingTask("Coding");
       element(by.id('Coding')).click();
@@ -16,8 +16,6 @@ describe('ToDo List', function () {
     });
 
     describe('multiple tasks when they are', function () {
-      var addingTask = require("./helpers/addingTaskHelper");
-
       it('consecutive', function () {
         addingTask("Coding");
         element(by.id('Coding')).click();
