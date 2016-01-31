@@ -28,14 +28,25 @@ describe('ToDoListController', function() {
     });
   });
 
-  describe('#filterComplete', function () {
+  describe('#filterCompleted', function () {
     it('displays all completed tasks', function () {
       ctrl.addTask('Coding');
       ctrl.addTask('Reading');
       ctrl.addTask('Walking');
       ctrl.taskList[0].done = true;
-      ctrl.filterComplete();
+      ctrl.filterCompleted();
       expect(ctrl.taskList.length).toEqual(1);
+    });
+  });
+
+  describe('#filterActive', function () {
+    it('displays all active tasks', function () {
+      ctrl.addTask('Coding');
+      ctrl.addTask('Reading');
+      ctrl.addTask('Walking');
+      ctrl.taskList[0].done = true;
+      ctrl.filterActive();
+      expect(ctrl.taskList.length).toEqual(2);
     });
   });
 });
