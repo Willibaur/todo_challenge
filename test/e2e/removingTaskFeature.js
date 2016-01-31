@@ -1,13 +1,14 @@
 describe('ToDo List', function () {
   beforeEach(function() {
-    browser.get('http://localhost:8080')
+    browser.get('http://localhost:8080');
   });
 
 
   describe('Removes a task for', function () {
+    var addingTask = require("./helpers/addingTaskHelper");
+
     it('a single task', function () {
-      element(by.model('toDoCtrl.newTask')).sendKeys('Coding');
-      element(by.id('addTask')).click();
+      addingTask("Coding");
       element(by.id('Coding')).click();
       element(by.id('removeTask')).click();
 
@@ -15,12 +16,12 @@ describe('ToDo List', function () {
     });
 
     describe('multiple tasks when they are', function () {
+      var addingTask = require("./helpers/addingTaskHelper");
+
       it('consecutive', function () {
-        element(by.model('toDoCtrl.newTask')).sendKeys('Coding');
-        element(by.id('addTask')).click();
+        addingTask("Coding");
         element(by.id('Coding')).click();
-        element(by.model('toDoCtrl.newTask')).sendKeys('Reading');
-        element(by.id('addTask')).click();
+        addingTask("Reading");
         element(by.id('Reading')).click();
         element(by.id('removeTask')).click();
 
@@ -28,18 +29,14 @@ describe('ToDo List', function () {
       });
 
       it('alternate', function () {
-        element(by.model('toDoCtrl.newTask')).sendKeys('Coding');
-        element(by.id('addTask')).click();
+        addingTask("Coding");
         element(by.id('Coding')).click();
-        element(by.model('toDoCtrl.newTask')).sendKeys('Walking');
-        element(by.id('addTask')).click();
-        element(by.model('toDoCtrl.newTask')).sendKeys('Reading');
-        element(by.id('addTask')).click();
-        element(by.id('Reading')).click();
+        addingTask("Reading");
+        addingTask("Walking");
+        element(by.id('Walking')).click();
         element(by.id('removeTask')).click();
 
       expect(element(by.id('totalTasks')).getText()).toEqual('Total tasks: 1');
-
       });
     });
   });
