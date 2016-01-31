@@ -20,8 +20,8 @@
     <div>
       <form class="form-horizontal">
         <input type="text" ng-model="toDoCtrl.newTask">
-        <button class="btn btn-success" ng-click="toDoCtrl.addTask(toDoCtrl.newTask)">Add task</button>
-        <button class="btn" ng-click="toDoCtrl.removeTask()">Remove task</button>
+        <button id="addTask" class="btn btn-success" ng-click="toDoCtrl.addTask(toDoCtrl.newTask)">Add task</button>
+        <button id="removeTask" class="btn" ng-click="toDoCtrl.removeTask()">Remove task</button>
         <button class="btn" ng-click="toDoCtrl.filterCompleted()">Completed</button>
         <button class="btn" ng-click="toDoCtrl.filterActive()">Active</button>
         <button class="btn" ng-click="toDoCtrl.filterAll()">All</button>
@@ -31,11 +31,11 @@
       <ul class="list-group" ng-repeat="taskList in toDoCtrl.taskList">
         <li>
           <span ng-class="{'done': taskList.done}">{{taskList.title}}</span>
-          <input type="checkbox" ng-model="taskList.done"/>
+          <input id={{taskList.title}} type="checkbox" ng-model="taskList.done"/>
         </li>
         <br>
       </ul>
-      <p>Total tasks: {{toDoCtrl.countTasks()}}</p>
+      <p id="totalTasks">Total tasks: {{toDoCtrl.countTasks()}}</p>
     </div>
   </body>
 </html>

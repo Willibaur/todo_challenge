@@ -9,7 +9,7 @@ describe('ToDo List', function () {
 
   it('adds a new task', function () {
     element(by.model('toDoCtrl.newTask')).sendKeys('Coding');
-    element(by.className('btn')).click();
+    element(by.id('addTask')).click();
 
     expect(element(by.className('list-group')).getText()).toEqual('Coding');
   });
