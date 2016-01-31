@@ -96,8 +96,10 @@ describe('ToDoListController', function() {
       ctrl.addTask('Coding');
       ctrl.addTask('Reading');
       ctrl.addTask('Walking');
+      ctrl.taskList[0].done = true;
+      ctrl.filterActive()      
       ctrl.clearAll();
-      expect(ctrl.countTasks()).toEqual(0);      
+      expect(ctrl.countTasks()).toEqual(0);
     });
   });
 });
