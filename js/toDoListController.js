@@ -51,4 +51,8 @@ toDoList.controller('ToDoListController', [function() {
   self.filterAll = function () {
     self.taskList = self.filteredTasklist;
   }
+
+  self.countTasks = function () {
+    return self.taskList.length;
+  }
 }]);

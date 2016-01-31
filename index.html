@@ -32,7 +32,9 @@
           <span ng-class="{'done': taskList.done}">{{taskList.title}}</span>
           <input type="checkbox" ng-model="taskList.done"/>
         </li>
+        <br>
       </ul>
+      <p>Total tasks: {{toDoCtrl.countTasks()}}</p>
     </div>
   </body>
 </html>
