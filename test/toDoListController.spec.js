@@ -27,4 +27,15 @@ describe('ToDoListController', function() {
       expect(ctrl.taskList.length).toEqual(0);
     });
   });
+
+  describe('#filterComplete', function () {
+    it('displays all completed tasks', function () {
+      ctrl.addTask('Coding');
+      ctrl.addTask('Reading');
+      ctrl.addTask('Walking');
+      ctrl.taskList[0].done = true;
+      ctrl.filterComplete();
+      expect(ctrl.taskList.length).toEqual(1);
+    });
+  });
 });
