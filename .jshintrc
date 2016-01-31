@@ -90,9 +90,9 @@
 
     // Custom Globals
     "globals"       : { "toDoList": true, "angular": true,
-                        "angular": false, "describe": false, "it": false,
-                        "expect": false, "beforeEach": false,
-                        "afterEach": false, "module": false,
-                        "inject": false
+                        "angular": true, "describe": true, "it": true,
+                        "expect": true, "beforeEach": true,
+                        "afterEach": true, "module": true,
+                        "inject": true, "browser": true
                       }        // additional predefined global variables
 }
