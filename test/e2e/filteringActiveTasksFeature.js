@@ -8,29 +8,29 @@ describe('ToDo List', function () {
     browser.get('http://localhost:8080')
   });
 
-  describe('Filters by completed task when', function () {
+  describe('Filters by active task when', function () {
     it('a single task', function () {
       addingAndCompletingTask("Coding");
-      element(by.id('completedFilter')).click();
+      element(by.id('activeFilter')).click();
 
-      expect(element(by.id('totalTasks')).getText()).toEqual('Total tasks: 1');
+      expect(element(by.id('totalTasks')).getText()).toEqual('Total tasks: 0');
     });
 
     describe('multiple tasks when they are', function () {
       it('consecutive', function () {
-        addingAndCompletingTask("Coding");
-        addingAndCompletingTask("Reading");
+        addingTask("Coding");
+        addingTask("Reading");
         addingAndCompletingTask("Walking")
-        element(by.id('completedFilter')).click();
+        element(by.id('activeFilter')).click();
 
-      expect(element(by.id('totalTasks')).getText()).toEqual('Total tasks: 3');
+      expect(element(by.id('totalTasks')).getText()).toEqual('Total tasks: 2');
       });
 
       it('alternate', function () {
-        addingAndCompletingTask("Coding");
         addingTask("Reading");
-        addingAndCompletingTask("Walking");
-        element(by.id('completedFilter')).click();
+        addingAndCompletingTask("Coding");
+        addingTask("Walking");
+        element(by.id('activeFilter')).click();
 
       expect(element(by.id('totalTasks')).getText()).toEqual('Total tasks: 2');
       });
