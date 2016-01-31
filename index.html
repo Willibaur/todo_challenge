@@ -22,7 +22,7 @@
         <input type="text" ng-model="toDoCtrl.newTask">
         <button id="addTask" class="btn btn-success" ng-click="toDoCtrl.addTask(toDoCtrl.newTask)">Add task</button>
         <button id="removeTask" class="btn" ng-click="toDoCtrl.removeTask()">Remove task</button>
-        <button class="btn" ng-click="toDoCtrl.filterCompleted()">Completed</button>
+        <button id="completedFilter" class="btn" ng-click="toDoCtrl.filterCompleted()">Completed</button>
         <button class="btn" ng-click="toDoCtrl.filterActive()">Active</button>
         <button class="btn" ng-click="toDoCtrl.filterAll()">All</button>
         <button class="btn" ng-click="toDoCtrl.clearAll()">Clear All</button>
