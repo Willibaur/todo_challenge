@@ -24,6 +24,7 @@
         <button class="btn" ng-click="toDoCtrl.removeTask()">Remove task</button>
         <button class="btn" ng-click="toDoCtrl.filterCompleted()">Completed</button>
         <button class="btn" ng-click="toDoCtrl.filterActive()">Active</button>
+        <button class="btn" ng-click="toDoCtrl.filterAll()">All</button>
       </form>
 
       <ul class="list-group" ng-repeat="taskList in toDoCtrl.taskList">

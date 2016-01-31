@@ -49,4 +49,16 @@ describe('ToDoListController', function() {
       expect(ctrl.taskList.length).toEqual(2);
     });
   });
+
+  describe('#filterAll', function () {
+    it('displays all active tasks', function () {
+      ctrl.addTask('Coding');
+      ctrl.addTask('Reading');
+      ctrl.addTask('Walking');
+      ctrl.taskList[0].done = true;
+      ctrl.filterCompleted();
+      ctrl.filterAll()
+      expect(ctrl.taskList.length).toEqual(3);
+    });
+  });
 });

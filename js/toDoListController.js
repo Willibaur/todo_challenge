@@ -7,12 +7,14 @@ toDoList.controller('ToDoListController', [function() {
 
 
   self.addTask = function (newTask) {
+    self.filterAll();
     self.taskList.push({title: newTask, done:false});
     self.newTask = "";
     self.filteredTasklist = self.taskList;
   }
 
   self.removeTask = function () {
+    self.filterAll();
     self.oldList  = self.taskList;
     self.taskList = [];
 
@@ -46,4 +48,7 @@ toDoList.controller('ToDoListController', [function() {
     }
   }
 
+  self.filterAll = function () {
+    self.taskList = self.filteredTasklist;
+  }
 }]);
