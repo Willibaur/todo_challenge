@@ -6,6 +6,7 @@
     <title>ToDo List</title>
 
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
@@ -18,12 +19,14 @@
   <body ng-controller="ToDoListController as toDoCtrl">
     <div>
       <form class="form-horizontal">
-        <input type="text" ng-model="toDoCtrl.items">
-        <button class="btn">Add task</button>
+        <input type="text" ng-model="toDoCtrl.newTask">
+        <button class="btn btn-success" ng-click="toDoCtrl.addTask(toDoCtrl.newTask)">Add task</button>
       </form>
-      <ul class="list-group">
+
+      <ul class="list-group" ng-repeat="taskList in toDoCtrl.taskList">
         <li>
-          <p>{{toDoCtrl.items}}</p>
+          <span ng-class="{'done': taskList.done}">{{taskList.title}}</span>
+          <input type="checkbox" ng-model="taskList.done"/>
         </li>
       </ul>
     </div>
