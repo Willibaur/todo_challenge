@@ -1,15 +1,15 @@
 describe('ToDo List', function () {
   var addingTask = require("./helpers/addingTaskHelper");
+  var addingAndCompletingTask =
+                        require("./helpers/addingAndCompletingTaskHelper");
 
   beforeEach(function() {
     browser.get('http://localhost:8080');
   });
 
-
-  describe('Removes a task for', function () {
+  describe('Removes', function () {
     it('a single task', function () {
-      addingTask("Coding");
-      element(by.id('Coding')).click();
+      addingAndCompletingTask("Coding");
       element(by.id('removeTask')).click();
 
       expect(element(by.id('totalTasks')).getText()).toEqual('Total tasks: 0');
@@ -17,21 +17,17 @@ describe('ToDo List', function () {
 
     describe('multiple tasks when they are', function () {
       it('consecutive', function () {
-        addingTask("Coding");
-        element(by.id('Coding')).click();
-        addingTask("Reading");
-        element(by.id('Reading')).click();
+        addingAndCompletingTask("Coding");
+        addingAndCompletingTask("Reading");
         element(by.id('removeTask')).click();
 
       expect(element(by.id('totalTasks')).getText()).toEqual('Total tasks: 0');
       });
 
       it('alternate', function () {
-        addingTask("Coding");
-        element(by.id('Coding')).click();
+        addingAndCompletingTask("Coding");
         addingTask("Reading");
-        addingTask("Walking");
-        element(by.id('Walking')).click();
+        addingAndCompletingTask("Walking");
         element(by.id('removeTask')).click();
 
       expect(element(by.id('totalTasks')).getText()).toEqual('Total tasks: 1');
