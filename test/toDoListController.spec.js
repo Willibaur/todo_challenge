@@ -28,78 +28,63 @@ describe('ToDoListController', function() {
     });
   });
 
-  describe('#filterCompleted', function () {
-    it('displays all completed tasks', function () {
+  describe('Adding, Removing and Filterig', function () {
+
+    beforeEach(function() {
       ctrl.addTask('Coding');
       ctrl.addTask('Reading');
       ctrl.addTask('Walking');
       ctrl.taskList[0].done = true;
-      ctrl.filterCompleted();
-      expect(ctrl.taskList.length).toEqual(1);
+    });
+
+    describe('#filterCompleted', function () {
+      it('displays all completed tasks', function () {
+        ctrl.filterCompleted();
+        expect(ctrl.taskList.length).toEqual(1);
+      });
+    });
+
+    describe('#filterActive', function () {
+      it('displays all active tasks', function () {
+        ctrl.filterActive();
+        expect(ctrl.taskList.length).toEqual(2);
+      });
+    });
+
+    describe('#filterAll', function () {
+      it('displays all tasks', function () {
+        ctrl.filterCompleted();
+        ctrl.filterAll()
+        expect(ctrl.taskList.length).toEqual(3);
+      });
+    });
+
+    describe('#countTasks', function () {
+      describe('when filter used is', function () {
+        it('All', function () {
+          ctrl.filterAll()
+          expect(ctrl.countTasks()).toEqual(3);
+        });
+
+        it('Completed', function () {
+          ctrl.filterCompleted()
+          expect(ctrl.countTasks()).toEqual(1);
+        });
+
+        it('Active', function () {
+          ctrl.filterActive()
+          expect(ctrl.countTasks()).toEqual(2);
+        });
+      });
+    });
+
+    describe('#clearAll', function () {
+      it('Clears all tasks', function () {
+        ctrl.filterActive()
+        ctrl.clearAll();
+        expect(ctrl.countTasks()).toEqual(0);
+      });
     });
   });
 
-  describe('#filterActive', function () {
-    it('displays all active tasks', function () {
-      ctrl.addTask('Coding');
-      ctrl.addTask('Reading');
-      ctrl.addTask('Walking');
-      ctrl.taskList[0].done = true;
-      ctrl.filterActive();
-      expect(ctrl.taskList.length).toEqual(2);
-    });
-  });
-
-  describe('#filterAll', function () {
-    it('displays all active tasks', function () {
-      ctrl.addTask('Coding');
-      ctrl.addTask('Reading');
-      ctrl.addTask('Walking');
-      ctrl.taskList[0].done = true;
-      ctrl.filterCompleted();
-      ctrl.filterAll()
-      expect(ctrl.taskList.length).toEqual(3);
-    });
-  });
-
-  describe('#countTasks', function () {
-    it('when All filter actived', function () {
-      ctrl.addTask('Coding');
-      ctrl.addTask('Reading');
-      ctrl.addTask('Walking');
-      ctrl.taskList[0].done = true;
-      ctrl.filterAll()
-      expect(ctrl.countTasks()).toEqual(3);
-    });
-
-    it('when Completed filter actived', function () {
-      ctrl.addTask('Coding');
-      ctrl.addTask('Reading');
-      ctrl.addTask('Walking');
-      ctrl.taskList[0].done = true;
-      ctrl.filterCompleted()
-      expect(ctrl.countTasks()).toEqual(1);
-    });
-
-    it('when Active filter actived', function () {
-      ctrl.addTask('Coding');
-      ctrl.addTask('Reading');
-      ctrl.addTask('Walking');
-      ctrl.taskList[0].done = true;
-      ctrl.filterActive()
-      expect(ctrl.countTasks()).toEqual(2);
-    });
-  });
-
-  describe('#clearAll', function () {
-    it('Clears all tasks', function () {
-      ctrl.addTask('Coding');
-      ctrl.addTask('Reading');
-      ctrl.addTask('Walking');
-      ctrl.taskList[0].done = true;
-      ctrl.filterActive()      
-      ctrl.clearAll();
-      expect(ctrl.countTasks()).toEqual(0);
-    });
-  });
 });
