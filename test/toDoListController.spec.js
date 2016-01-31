@@ -14,6 +14,7 @@ describe('ToDoListController', function() {
   describe('#addTask', function () {
     it('adds a tasks to the list', function () {
       ctrl.addTask('Coding');
+      expect(ctrl.newTask).toEqual('');
       expect(ctrl.taskList[0].title).toEqual('Coding');
     });
   });
