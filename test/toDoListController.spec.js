@@ -63,15 +63,41 @@ describe('ToDoListController', function() {
   });
 
   describe('#countTasks', function () {
-    describe('Counts all tasks', function () {
-      it('when All filter actived', function () {
-        ctrl.addTask('Coding');
-        ctrl.addTask('Reading');
-        ctrl.addTask('Walking');
-        ctrl.taskList[0].done = true;
-        ctrl.filterAll()
-        expect(ctrl.countTasks()).toEqual(3);
-      });
+    it('when All filter actived', function () {
+      ctrl.addTask('Coding');
+      ctrl.addTask('Reading');
+      ctrl.addTask('Walking');
+      ctrl.taskList[0].done = true;
+      ctrl.filterAll()
+      expect(ctrl.countTasks()).toEqual(3);
+    });
+
+    it('when Completed filter actived', function () {
+      ctrl.addTask('Coding');
+      ctrl.addTask('Reading');
+      ctrl.addTask('Walking');
+      ctrl.taskList[0].done = true;
+      ctrl.filterCompleted()
+      expect(ctrl.countTasks()).toEqual(1);
+    });
+
+    it('when Active filter actived', function () {
+      ctrl.addTask('Coding');
+      ctrl.addTask('Reading');
+      ctrl.addTask('Walking');
+      ctrl.taskList[0].done = true;
+      ctrl.filterActive()
+      expect(ctrl.countTasks()).toEqual(2);
+    });
+  });
+
+  describe('#clearAll', function () {
+    it('Clears all tasks', function () {
+      ctrl.addTask('Coding');
+      ctrl.addTask('Reading');
+      ctrl.addTask('Walking');
+      ctrl.clearAll();
+      expect(ctrl.countTasks()).toEqual(0);      
     });
   });
 });
