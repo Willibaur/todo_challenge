@@ -89,7 +89,11 @@ $ npm install
 $ bower install
 ```
 
-If you want to run the app locally you need to run two services
+
+Services
+--------
+
+If you want to run the app or see the back or front end tests locally, you need to run two services
 
 ```sh
 $ http-server
@@ -99,6 +103,24 @@ In another terminal
 
 ```sh
 $ webdriver-manager start
+```
+
+
+Back end tests
+---------------
+
+For the back end tests I used Karma and Jasmine, you can run all tests by
+
+```sh
+$ karma start test/karma.conf.js
+```
+
+Front end feature tests
+-------------------------
+
+For the front end feature tests I used Protractor, you can rull all test by
+```sh
+$ protractor test/e2e/conf.js
 ```
 
 
