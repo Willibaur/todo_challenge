@@ -5,6 +5,7 @@ language: node_js
 node_js:
   - "5.5.0"
 before_script:
+  - npm -g install npm@latest
   - bower install
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
