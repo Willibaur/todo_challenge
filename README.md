@@ -1,23 +1,23 @@
-# Todo Challenge
+ToDo List Challenge
+====================
 
-* Deadline: submit completed pull request by 9am on Monday
-* You may use whatever level of JavaScript you feel comfortable with - pure JS, jQuery, Angular, or whatever weird and wonderful framework you want to try. Extra points for DogeScript
+[![Build Status](https://travis-ci.org/Willibaur/todo_challenge.svg?branch=master)](https://travis-ci.org/makers/instagram-challenge)
+--------------------------------------------------
 
-Steps
--------
+This is a solution to a challenge given by Makers Academy on week 8, part of Learn to code in 12 weeks course.
 
-1. Fill out your learning plan self review for the week: https://github.com/makersacademy/learning_plan 
-2. Fork this repo, and clone to your local machine
-3. Complete the following challenge:
+The aim of the challenge.
+-------------------------
 
-## Challenge
+Create a ToDo List app using AngularJS, HTML and CSS.
 
-![Todo mockup](https://makersacademy.mybalsamiq.com/mockups/2914603.png?key=afabb09aef2901a2732515ae4349c1ec0458294b)
+The application needs to be driven by TDD and BDD by using Karma and Protractor.
 
-Build a Todo list as a mini front-end application. You don't have to use a database, the front-end is more important - you can use an appropriate data structure stored somewhere in your JavaScript (this time only!)
+When the application is 100% functional, needs to be deployed to Heroku.
 
-Here are the core user stories:
 
+User stories
+------------
 ```
 As a forgetful person
 I want to store my tasks
@@ -48,26 +48,77 @@ I want to be able to clear my completed tasks
 So I never see them again
 ```
 
-As you may imagine, implementing a To-do list is very much a solved problem. However, we are mainly interested in seeing how you approach testing and design. We are looking for:
 
-* well written, well structured acceptance and unit tests
-* clear and expressive JavaScript
-* good HTML5 markup
 
-Don't worry about deployment, and make sure you read the CONTRIBUTING.md when submitting a pull request.
-
-## Extensions
+### Optional Extra
 
 * Deploy the app
 * Create a persistance layer (e.g. MongoDB), or use LocalStorage or the filesystem through Node
 * Make it look purdy (CSS) - try a framework like Bootstrap or Foundation
 
-## CI
 
-Read the `.travis.yml` if any of the steps below don't make sense! 
+Technologies used
+-----------------
 
-* Make sure you have set up `npm test` in your `package.json` so that it runs your Karma tests
-* Make sure you have your Protractor config file at `e2e/conf.js`
-* Make sure `npm start` spins up whatever serves up your app - `http-server`, Sinatra or Node
+  * Testing
+    * Karma
+    * Protractor
+    * Jasmine
 
-Good luck!
+
+  * Back end framework
+    * JavaScript
+
+
+  * Front end framework
+    * AngularJS
+    * jQuery
+    * CSS
+    * Bootstrap
+
+
+Testing and running environment setup
+--------------------------------------
+
+In order to edit, view or modify the source code, you will need to clone the repo shown below, access the folder and execute the following commands to be functional.
+
+```sh
+$ git clone git@github.com:Willibaur/instagram-challenge.git
+$ cd todo_challenge
+$ npm install
+$ bower install
+```
+
+If you want to run the app locally you need to run two services
+
+```sh
+$ http-server
+```
+
+In another terminal
+
+```sh
+$ webdriver-manager start
+```
+
+
+Web access application
+-----------------------
+
+You can access the app locally from console
+
+```sh
+$ open index.html
+```
+
+or by using your browser adding the underline
+
+```
+file:///Users/[USERNAME]/todo_challenge/index.html
+```
+
+
+Contributors
+------------
+
+* [William Bautista](https://github.com/Willibaur)
