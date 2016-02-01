@@ -1,8 +1,8 @@
 ToDo List Challenge
 ====================
 
-[![Build Status](https://travis-ci.org/Willibaur/todo_challenge.svg?branch=master)](https://travis-ci.org/makers/instagram-challenge)
---------------------------------------------------
+[![Build Status](https://travis-ci.org/Willibaur/todo_challenge.svg?branch=master)](https://travis-ci.org/Willibaur/todo_challenge)
+---------------------------------------------------
 
 This is a solution to a challenge given by Makers Academy on week 8, part of Learn to code in 12 weeks course.
 
