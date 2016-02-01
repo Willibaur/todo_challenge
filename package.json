@@ -30,7 +30,8 @@
     "protractor-console": "^2.0.0"
   },
   "scripts": {
-    "test": "karma start test/karma.conf.js"
+    "test": "karma start test/karma.conf.js",
+    "start": "http-server"
   },
   "repository": {
     "type": "git",
