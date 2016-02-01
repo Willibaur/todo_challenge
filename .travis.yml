@@ -3,7 +3,7 @@ script:
   - node_modules/.bin/protractor test/e2e/conf.js --browser=firefox
 language: node_js
 node_js:
-  - "0.10"
+  - "5.5.0"
 before_script:
   - bower install
   - "export DISPLAY=:99.0"
